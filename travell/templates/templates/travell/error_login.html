@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+    <div class="col-10 offset-md-1">
+    <p class="h6 text-muted">Пожалуйста, используйте следующую форму для входа в систему.</p>
+     <div class="card col align-self-center">
+          <div class="card-header">
+    <blockquote class="blockquote text-center">
+              <h1>Sign in</h1>
+    </blockquote>
+              <p style="color: #ff0000">*Incorrect username or password.</p>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="exampleInputUsername">Username</label>
+                <input class="form-control" id="exampleInputUsername" placeholder="Username" name="username">
+            </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+             </div>
+            {% csrf_token %}
+            <div class="col-3 mx-auto">
+                <p><input type="submit" class="btn btn-primary" value="Sign in"></p>
+            </div>
+        </form>
+          </div>
+     </div>
+    Если у вас нет учетной записи <a href="{% url "register" %}">Зарегестрироваться</a>
+    </div>
+{% endblock %}
